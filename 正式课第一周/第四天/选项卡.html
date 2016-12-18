@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rebeccapurple;
+            float: left;
+        }
+        #box div{
+            display: none;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            background-color: rebeccapurple;
+        }
+        li.cur{
+            background-color: yellow;
+        }
+        #box div.cur{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li class="cur">第一项</li>
+        <li>第二项</li>
+        <li>第三项</li>
+    </ul>
+    <div class="cur" id="box1">一</div>
+    <div>二</div>
+    <div>三</div>
+</div>
+<script>
+//    var oDiv=document.getElementById("box");
+//    var oLis=oDiv.getElementsByTagName("li");
+//    var oDivs=oDiv.getElementsByTagName("div");
+//    for(var i=0;i<oLis.length;i++){
+//        oLis[i].index=i;
+//        oLis[i].onclick=function () {
+//            for(var j=0;j<oLis.length;j++){
+//                oLis[j].className="";
+//                oDivs[j].className=""
+//            }
+//            this.className="cur";
+//            oDivs[this.index].className="cur";
+//        }
+
+//    }
+//    function Fn(num) {
+//        this.x=this.y=num
+//    }
+//    Fn.prototype={
+//        x:20,
+//        sum:function () {
+//            console.log(this.x+this.y)
+//        }
+//    }
+//    var f=new Fn(10);
+//    console.log(f.num===Fn.prototype.num)
+//    f.sum();
+//    Fn.prototype.sum();
+//    console.log(f.constructor)
+//     function pre(curElement) {
+//         if(curElement.previousElementSibling){
+//             return curElement.previousElementSibling
+//         }
+//         var pre=pre.previousSibling;
+//         while(pre&&pre.nodeType!==1){
+//             pre=pre.previousSibling
+//         }
+//         return pre
+//     }
+//  var oDiv=document.getElementById("box");
+//    var oLis=oDiv.getElementsByTagName("li");
+//    var oDivs=oDiv.getElementsByTagName("div");
+//   function fn() {
+//       for(var i=0;i<oLis.length;i++){
+//           oLis[i].index=i;
+//       oLis[i].onclick=function () {
+//           for(var j=0;j<oLis.length;j++){
+//               oLis[j].className="";
+//               oDivs[j].className="";
+//           }
+//           this.className="cur";
+//           oDivs[this.index].className="cur"
+//          }
+//       }
+//   }fn()
+
+
+
+</script>
+
+</body>
+</html>

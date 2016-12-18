@@ -1,32 +1,30 @@
 1.把“本地仓库”所有内容，推送到“远程仓库”;
-创建本地仓库 git init
-git remote add origin
-git add ./-A --all
-git commit -m""
-git push origin master
-
+1)创建本地仓库 git init
+2)git remote add origin 地址
+  git add.
+  git commit -m""
+  git push origin master
 2.学员更新老师讲义
-    1)添加远程 git remote add
-    2）更新远程 git remote update teacher
-    git pull teacher master
+    1）添加远程仓库 git remote add teacher 地址
+    2）git remote update teacher
+    3)git pull teacher master
 
 3.什么是预解释？
-
+在当前作用域下，js代码执行之前，浏览器会对带var和带function 进行提前声明或定义
 4.函数执行四阶段
-    1形成私有作用域
-    2形参赋值
-    3预解释
-    4代码从上到下执行
+1）形成私有作用域
+2）形参赋值
+3）预解释
+4）代码从上到下执行
+
 5.私有变量有2种
-    私有作用域中带var
-    形参
+   1）在当前作用域下 带var
+   2）形参
 6.预解释无节操 6个
-    1.=左边带var，只声明不定义
-    2.已经声明过的不会重复声明，但会重新赋值
-    3.自执行函数不会进行预解释，执行到他的时候，声明+定义+调用同步完成
-    4.条件判断语句中无论条件是否成立，都会进行预解释
-    5.return后面语句不会预解释，return下面的语句，虽然不执行，但会预解释
-    6.预解释阶段函数优先级大于变量
+    1）=左边带var的 只声明不定义
+    2）已经声明过的变量不会重复声明但会重新赋值
+    3）自执行函数不进行预解释，但执行的时候声明+定义+调用同步完成
+
 7.内存及内存释放
     内存：堆内存+栈内存
 

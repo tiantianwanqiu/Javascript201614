@@ -7,38 +7,39 @@
             function g(){return true;}
         }
     })();
-    alert(f());
-    alert(g());
+    alert(f());    false
+    alert(g());  false
 2.自执行函数的预解释
 (function f(){
     function f(){ return 1; }
-    alert (f());
+    alert (f());   2
     function f(){ return 2; }
 })();
 
 3.作用域链
 var a=12;
 function show(){
-    alert(a);
+    alert(a);      12
     a=15;
 }
 show();
-alert(a);
+alert(a);      15
 
 4.预解释：变量声明早于代码运行
 var a=12;
 function show(){
-    alert(a);
-    var a=15;
+    alert(a);    undefined
+    var a=15;      
 }
 show();
-alert(a);
+alert(a);      12
 5.预解释：变量声明早于代码运行
 var uname = 'jack'
 function change() {
-    alert(uname)
-    var uname = '珠峰'
-    alert(uname)
+    alert(uname)    undefined
+
+   var uname = '珠峰'
+    alert(uname)     "珠峰"
 }
 change()
 6.在没有形参的情况下：函数声明早于变量声明
@@ -53,29 +54,29 @@ change()；
 7.带var和不带var的区别；
 function abc(){
     a=12;
-    alert(a);
+    alert(a);  12
 }
 function b(){
     alert(a)
 }
 abc();
-b();
+b();    12
 
 面试题
 1.关于内存释放的面试题
 function fn() {
-        var i = 10;
+        var i = 10;11 12
         return function (n) {
             console.log(n + (++i));
         }
     }
     var f = fn();
-    f(15);
-    f(20);
-    fn()(15);
-    fn()(20);
-    fn()(30);
-    f(30);
+    f(15);  15+11=26
+    f(20);  20+12=32
+    fn()(15);  15+11=26
+    fn()(20);  20+11=31
+    fn()(30);  30+11=41
+    f(30);   30+13=43
 2.综合面试题
 考察：this指向；
     var num = 10;
@@ -92,9 +93,9 @@ function fn() {
         })(num)
     };
     var fn = obj.fn;
-    fn();
-    obj.fn();
-    console.log(window.num, obj.num);
+    fn();  21
+    obj.fn();22
+    console.log(window.num, obj.num);60 60
 
 3.关于this和||的运用；
 var name='珠峰';
@@ -114,7 +115,7 @@ console.log(name,age)
         }
     }
     var f=fn();
-    f(3)
-    fn()(3);
-    f(4);
-    fn()(3);
+    f(3) 3*7=21
+    fn()(3);45
+    f(4);64
+    fn()(3); 99

@@ -6,23 +6,33 @@
 </head>
 <body>
 <script>
-    var num = 10;
-    var obj = {
-        num: 20,
-        fn: (function (num) {
-            this.num *= 2;
-            num += 10;
-            return function () {
-                this.num *= 3;
-                num += 1;
-                console.log(num);
-            }
-        })(num)
-    };
-    var fn = obj.fn;
-    fn();//21
-    obj.fn();//22;
-    console.log(window.num, obj.num);//60  60;
+//    var num = 10;
+//    var obj = {
+//        num: 20,
+//        fn: (function (num) {
+//            this.num *= 2;
+//            num += 10;
+//            return function () {
+//                this.num *= 3;
+//                num += 1;
+//                console.log(num);
+//            }
+//        })(num)
+//    };
+//    var fn = obj.fn;
+//    fn();//21
+//    obj.fn();//22;
+//    console.log(window.num, obj.num);//60  60;
+f=function(){return true};
+g=function(){return false};
+(function(){
+    if(g()&&[]==![]){
+        f=function(){return false;}
+        function g(){return true;}
+    }
+})();
+alert(f());
+alert(g());
 </script>
 </body>
 </html>

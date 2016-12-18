@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   // var ary1=[9.84,9.9,8.77,6.54,9.99,10]
+    function average() {
+        //1,将类数组转数组
+//        var ary=[];
+//        for(var i=0;i<arguments.length;i++){
+//            ary.push(arguments[i]);
+//        }
+    var ary=Array.prototype.slice.call(arguments);
+
+        //2,数组排序
+        ary.sort(function (a,b) {
+            return a-b;
+        })
+        //3,去头去尾
+        ary.shift();//删除数组第一项
+        ary.pop();//删除数组最后一项
+        //4,求平均数
+        return (eval(ary.join("+"))/ary.length).toFixed(2)
+    }var res=average(9.84,9.9,8.77,6.54,9.99,10);
+    console.log(res)
+    //1，将类数组转为数组
+    //2，数组排序
+    //3，去头去尾
+    //4，求平均数
+     function average() {
+         var ary=Array.prototype.slice.call(arguments);
+         ary.sort(function (a,b) {
+             return a-b
+         });
+         ary.shift();
+         ary.pop();
+         return  (eval(ary.join("+"))/ary.length).toFixed(2)
+     }var res=average(9.8,9.9,2.11,6.55,9.8)
+       console.log(res)
+
+
+
+</script>
+
+</body>
+</html>

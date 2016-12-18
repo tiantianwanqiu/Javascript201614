@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ultils.js"></script>
+</head>
+<body>
+<!--<div>24</div>-->
+<!--<div>34</div>-->
+<!--<div>15</div>-->
+<!--<div>17</div>-->
+<!--<div>2</div>-->
+<div>中国</div>
+<div>爱国家</div>
+<div>水果</div>
+<div>西瓜</div>
+
+
+<script>
+    //类数组转数组
+    //sort排序
+    //把内容插入页面
+//    function makeArry(arg) {
+//        try{
+//            return Array.prototype.slice.call(arg)
+//        }catch(e){
+//            var ary=[];
+//            for(var i=0;i<arg.length;i++){
+//                ary.push(arg[i]);
+//            }
+//            return ary;
+//        }
+//    }//封装一个方法，类数组转数组
+//    var oDiv=document.getElementsByTagName("div");//获取元素集合
+//    var ary=makeArry(oDiv); //将元素集合转化为数组集合
+//    ary.sort(function (a,b) {//数组排序
+//        return a.innerHTML-b.innerHTML;//将数组内容排序
+//    })
+//    for(var i=0;i<ary.length;i++){
+//        document.body.appendChild(ary[i])//将元素中的每一项添加到页面中
+//    }
+//    var utils= {
+//        makeArray: function (arg) {
+//            try {
+//                return Array.prototype.slice.call(arg);
+//            } catch (e) {
+//                var ary = [];
+//                for (var i = 0; i < arg.length; i++) {
+//                    ary.push(arg[i])
+//                }
+//            }
+//        }
+//    }
+  var oDiv=document.getElementsByTagName("div");
+    var ary=utils.makeArray(oDiv);
+    ary.sort(function (a,b) {
+        a=a.innerHTML;
+        b=b.innerHTML;
+        return a.localeCompare(b)
+    })
+//    for(var i=0;i<ary.length;i++){
+//        document.body.appendChild(ary[i])
+//    }
+     while(ary.length){
+         document.body.appendChild(ary.shift())
+     }
+
+
+
+
+//ary.sort(function (a,b) {
+//    a=a.innerHTML;
+//    b=b.innerHTML;
+//    return a.localeCompare(b)//汉字排序
+//});
+    //把排好序的内容重新插入页面中
+//    for(var i=0;i<ary.length;i++){
+//        document.body.appendChild(ary[i])
+//    }
+//    while(ary.length){
+//        document.body.appendChild(ary.shift())
+//    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
